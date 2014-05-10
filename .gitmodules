@@ -1,0 +1,3 @@
+[submodule "jnativehook"]
+	path = jnativehook
+	url = https://github.com/kwhat/jnativehook.git
