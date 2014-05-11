@@ -7,7 +7,7 @@ import java.lang.String;
 public class MainRecorder {	
 	private static long time = 0;
 	public static final int convertRate = 1000000;
-	public static final String root = System.getProperty("user.dir") + "/recordings/";
+	public static final String root = System.getProperty("user.dir") + "\\";
 	public static String file = null;
 	
 	public static void setTime(long time) {
@@ -17,8 +17,8 @@ public class MainRecorder {
 	public static long getTime() {
 		return MainRecorder.time;
 	}
-	
-	public static void record() {		
+
+	public static void record() {	
 		try {
             GlobalScreen.registerNativeHook();
 	    }

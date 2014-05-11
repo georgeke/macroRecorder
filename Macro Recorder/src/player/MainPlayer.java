@@ -13,9 +13,7 @@ public class MainPlayer {
 	public static boolean exit = false;
 	public static String filepath = null;
 	
-	public static void play() {
-
-		
+	public static void play() {		
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(filepath));
 			Robot player = new Robot();

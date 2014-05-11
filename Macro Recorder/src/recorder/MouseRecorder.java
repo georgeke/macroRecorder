@@ -47,6 +47,16 @@ public class MouseRecorder implements NativeMouseInputListener {
             System.err.println("Error writing.");
             System.err.println(iox.getMessage());
 
+       		try {
+    			BufferedWriter out = new BufferedWriter(new FileWriter("a.txt", true));
+    			
+    			out.write("KeyRecorder error writing");
+    			out.newLine();
+    			out.close();
+    		} catch (IOException idox) {
+    			
+    		}
+            
             System.exit(1);
 	    }
 	}
@@ -80,6 +90,16 @@ public class MouseRecorder implements NativeMouseInputListener {
             System.err.println("Error writing.");
             System.err.println(iox.getMessage());
 
+       		try {
+    			BufferedWriter out = new BufferedWriter(new FileWriter("a.txt", true));
+    			
+    			out.write("KeyRecorder error writing");
+    			out.newLine();
+    			out.close();
+    		} catch (IOException idox) {
+    			
+    		}
+            
             System.exit(1);
 	    }
 	}
@@ -111,6 +131,16 @@ public class MouseRecorder implements NativeMouseInputListener {
             System.err.println("Error writing.");
             System.err.println(iox.getMessage());
 
+       		try {
+    			BufferedWriter out = new BufferedWriter(new FileWriter("a.txt", true));
+    			
+    			out.write("KeyRecorder error writing");
+    			out.newLine();
+    			out.close();
+    		} catch (IOException idox) {
+    			
+    		}
+            
             System.exit(1);
 	    }	
 	}
