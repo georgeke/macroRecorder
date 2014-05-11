@@ -1,3 +1,9 @@
 [submodule "jnativehook"]
 	path = jnativehook
 	url = https://github.com/kwhat/jnativehook.git
+[submodule "lib/JNativeHook"]
+	path = lib/JNativeHook
+	url = https://github.com/georgeke/macroRecorder.git
+[submodule "JNativeHook"]
+	path = JNativeHook
+	url = https://github.com/kwhat/jnativehook.git
