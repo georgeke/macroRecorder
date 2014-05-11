@@ -15,7 +15,7 @@ Library
 
 Requirements
 ----
-*Warning: Only tested on 64-Bit Windows 7 with Lenono T430s keyboard. Should work with most North American keyboards.*
+*Only tested on 64-Bit Windows 7 with Lenono T430s keyboard. Should work with most North American keyboards.*
 
 - JDK 1.6 or higher
 - Windows 7
