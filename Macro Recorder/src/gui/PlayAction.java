@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.SwingUtilities;
 
@@ -34,6 +35,8 @@ public class PlayAction implements ActionListener {
 
             	if (MainPlayer.filepath != null) {
                 	UI.gui.setState(Frame.ICONIFIED);
+                	ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\img\\playIcon.png");
+            		UI.gui.setIconImage(img.getImage());
             		MainPlayer.play();
             	}
 

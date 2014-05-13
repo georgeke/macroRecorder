@@ -9,12 +9,15 @@ import java.awt.AWTException;
 import java.awt.Frame;
 import java.awt.Robot;
 
+import javax.swing.ImageIcon;
+
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
 public class MainPlayer {	
 	public static boolean exit = false;
 	public static boolean pause = false;
+	public static double speedMultiplier = 1;
 	public static String filepath = null;
 	
 	public static void play() {		
@@ -25,6 +28,9 @@ public class MainPlayer {
 	        GlobalScreen.registerNativeHook();			
 			GlobalScreen.getInstance().addNativeKeyListener(new KeyListener());
 
+			ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\img\\playIcon.png");
+    		UI.gui.setIconImage(img.getImage());
+			
 			String input = in.readLine();
 			int x;
 			int y;
@@ -62,17 +68,18 @@ public class MainPlayer {
 					player.keyRelease(keycode);
 				} else if (split[0].equals("Wait")) {
 					time = Integer.parseInt(split[1]);
-					player.delay(time);
+					player.delay((int)(time/speedMultiplier));
 				} else if (split[0].equals("Exit")) {
 					exit = true;
 				}
 				input = in.readLine();
 			}
 			
+			UI.gui.resetIcon();
 			UI.gui.setState(Frame.NORMAL);
-			GlobalScreen.unregisterNativeHook();
-			exit = false;
 			
+			GlobalScreen.unregisterNativeHook();
+			exit = false;			
 			in.close();
 		} catch (IOException iox) {
             System.err.println("Cannot read from " + filepath + ".");

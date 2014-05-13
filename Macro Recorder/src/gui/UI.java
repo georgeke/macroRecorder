@@ -18,7 +18,7 @@ public class UI {
 	    	public void run() {
 	    		gui = new Window();
 	            gui.setVisible(true);
-	            
+
 	    		JPanel actions = new JPanel();
 	    		GridBagLayout gridbag = new GridBagLayout();
 	    		GridBagConstraints c = new GridBagConstraints();

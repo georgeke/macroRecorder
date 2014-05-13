@@ -44,6 +44,7 @@ public class MainRecorder {
 	    	
 	    }
 	    
+	    UI.gui.resetIcon();
 	    UI.gui.setState(Frame.NORMAL);
 	}
 
