@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +22,9 @@ public class RecordAction implements ActionListener {
             public void run() {
             	MainRecorder.file = file.getText();
             	System.out.println(MainRecorder.file);
+            	
             	if (MainRecorder.file != null) {
+                	UI.gui.setState(Frame.ICONIFIED);
             		MainRecorder.record();
             	}
             }

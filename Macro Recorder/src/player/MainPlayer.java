@@ -1,9 +1,12 @@
 package player;
+import gui.UI;
+
 import java.awt.event.InputEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.AWTException;
+import java.awt.Frame;
 import java.awt.Robot;
 
 import org.jnativehook.GlobalScreen;
@@ -11,16 +14,17 @@ import org.jnativehook.NativeHookException;
 
 public class MainPlayer {	
 	public static boolean exit = false;
+	public static boolean pause = false;
 	public static String filepath = null;
 	
 	public static void play() {		
-		try {
+		try {			
 			BufferedReader in = new BufferedReader(new FileReader(filepath));
 			Robot player = new Robot();
 			
 	        GlobalScreen.registerNativeHook();			
 			GlobalScreen.getInstance().addNativeKeyListener(new KeyListener());
-			
+
 			String input = in.readLine();
 			int x;
 			int y;
@@ -60,11 +64,14 @@ public class MainPlayer {
 					time = Integer.parseInt(split[1]);
 					player.delay(time);
 				} else if (split[0].equals("Exit")) {
-					GlobalScreen.unregisterNativeHook();
 					exit = true;
 				}
 				input = in.readLine();
 			}
+			
+			UI.gui.setState(Frame.NORMAL);
+			GlobalScreen.unregisterNativeHook();
+			exit = false;
 			
 			in.close();
 		} catch (IOException iox) {

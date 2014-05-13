@@ -38,6 +38,7 @@ public class KeyRecorder implements NativeKeyListener {
             } else if (key == "Alt") {
             	keycode = 18;
             } else if (key == "Escape") {
+            	GlobalScreen.unregisterNativeHook();
             	skip = true;
             }
             

@@ -1,1 +1,3 @@
 Macro Recorder/lib/**
+*.jar
+*.txt

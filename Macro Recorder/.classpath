@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry excluding="gui/FileAction.java|gui/SetAction.java" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/George Ke/Documents/GitHub/macroRecorder/Macro Recorder/lib/JNativeHook/jar/JNativeHook.jar" sourcepath="C:/Users/George Ke/Documents/GitHub/macroRecorder/Macro Recorder/lib/JNativeHook">
+	<classpathentry kind="lib" path="C:/Users/George Ke/Documents/GitHub/macroRecorder/JNativeHook/jar/JNativeHook.jar" sourcepath="C:/Users/George Ke/Documents/GitHub/macroRecorder/JNativeHook">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/George Ke/Documents/GitHub/macroRecorder/Macro Recorder/lib/JNativeHook"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/George Ke/Documents/GitHub/macroRecorder/JNativeHook"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>

@@ -11,10 +11,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class UI {
+	public static Window gui = null;
+	
 	public static void run() {
 	    SwingUtilities.invokeLater(new Runnable() {
 	    	public void run() {
-	    		Window gui = new Window();
+	    		gui = new Window();
 	            gui.setVisible(true);
 	            
 	    		JPanel actions = new JPanel();
@@ -38,7 +40,7 @@ public class UI {
 
 	    	    c.weightx = 1;
 	    	    c.fill = GridBagConstraints.HORIZONTAL;
-	    	    c.gridx = 1;
+	    	    c.gridx = 1;  
 	    	    c.gridy = 0;
 	    	    actions.add(record, c);
 	    	    c.gridy = 1;

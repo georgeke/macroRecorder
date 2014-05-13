@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class PlayAction implements ActionListener {
             	}
 
             	if (MainPlayer.filepath != null) {
+                	UI.gui.setState(Frame.ICONIFIED);
             		MainPlayer.play();
             	}
 

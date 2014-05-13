@@ -2,6 +2,10 @@ package recorder;
 
 import org.jnativehook.GlobalScreen; 
 import org.jnativehook.NativeHookException;
+
+import gui.UI;
+
+import java.awt.Frame;
 import java.lang.String;
 
 public class MainRecorder {	
@@ -28,7 +32,8 @@ public class MainRecorder {
 	
 	            System.exit(1);
 	    }
-	 System.out.println(root);
+		System.out.println(root);
+		
 		time = System.nanoTime();
 	    GlobalScreen.getInstance().addNativeKeyListener(new KeyRecorder(root + file));
 	    GlobalScreen.getInstance().addNativeMouseListener(new MouseRecorder(root + file));
@@ -36,10 +41,10 @@ public class MainRecorder {
 	    GlobalScreen.getInstance().addNativeMouseWheelListener(new ScrollRecorder(root + file));
 	    
 	    while (GlobalScreen.isNativeHookRegistered()) {
-	    	continue;
+	    	
 	    }
 	    
-	    //System.exit(0);
+	    UI.gui.setState(Frame.NORMAL);
 	}
 
 }

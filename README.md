@@ -17,8 +17,7 @@ Requirements
 ----
 *Only tested on 64-Bit Windows 7 with Lenono T430s keyboard. Should work with most North American keyboards.*
 
-- JDK 1.6 or higher
-- Windows 7
+- JDK 1.7
 <br></br>
 
 Use
