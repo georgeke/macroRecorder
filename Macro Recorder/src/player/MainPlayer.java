@@ -17,7 +17,6 @@ import org.jnativehook.NativeHookException;
 public class MainPlayer {	
 	public static boolean exit = false;
 	public static boolean pause = false;
-	public static double speedMultiplier = 1;
 	public static String filepath = null;
 	
 	public static void play() {		
@@ -68,7 +67,7 @@ public class MainPlayer {
 					player.keyRelease(keycode);
 				} else if (split[0].equals("Wait")) {
 					time = Integer.parseInt(split[1]);
-					player.delay((int)(time/speedMultiplier));
+					player.delay(time);
 				} else if (split[0].equals("Exit")) {
 					exit = true;
 				}

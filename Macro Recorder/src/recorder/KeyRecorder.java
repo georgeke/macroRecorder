@@ -33,12 +33,11 @@ public class KeyRecorder implements NativeKeyListener {
             String key = NativeKeyEvent.getKeyText(keycode);
             boolean leave = false;
             
-            if (key == "Shift") {
+            if (key.equals("Shift")) {
             	keycode = 16;
-            } else if (key == "Alt") {
+            } else if (key.equals("Alt")) {
             	keycode = 18;
-            } else if (key == "Escape") {
-            	GlobalScreen.unregisterNativeHook();
+            } else if (key.equals("Escape")) {
             	skip = true;
             }
             
@@ -81,12 +80,11 @@ public class KeyRecorder implements NativeKeyListener {
             String key = NativeKeyEvent.getKeyText(keycode);
             boolean leave = false;
             
-            if (key == "Shift") {
+            if (key.equals("Shift")) {
             	keycode = 16;
-            } else if (key == "Alt") {
+            } else if (key.equals("Alt")) {
             	keycode = 18;
-            } else if (key == "Escape") {
-            	GlobalScreen.unregisterNativeHook();
+            } else if (key.equals("Escape")) {
             	out.write("Exit");
             	out.newLine();
             	exit = true;
@@ -104,6 +102,8 @@ public class KeyRecorder implements NativeKeyListener {
 	            out.newLine();
 	            out.write("Wait " + timeMs);
 	            out.newLine();
+        	} else {
+        		GlobalScreen.unregisterNativeHook();
         	}
             
             out.close();

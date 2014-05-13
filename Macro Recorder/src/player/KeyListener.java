@@ -1,9 +1,5 @@
 package player;
 
-import javax.swing.ImageIcon;
-
-import gui.UI;
-
 import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
