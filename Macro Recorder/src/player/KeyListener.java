@@ -19,6 +19,5 @@ public class KeyListener implements NativeKeyListener {
 
 	@Override
 	public void nativeKeyTyped(NativeKeyEvent e) {		
-	}
-	
+	}	
 }
