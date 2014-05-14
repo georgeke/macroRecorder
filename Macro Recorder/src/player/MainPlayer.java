@@ -19,7 +19,7 @@ public class MainPlayer {
 	public static boolean pause = false;
 	public static String filepath = null;
 	
-	public static void play() {		
+	public static void play() throws IllegalArgumentException {		
 		try {			
 			BufferedReader in = new BufferedReader(new FileReader(filepath));
 			Robot player = new Robot();
