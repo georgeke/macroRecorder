@@ -11,7 +11,7 @@ import java.lang.String;
 public class MainRecorder {	
 	private static long time = 0;
 	public static final int convertRate = 1000000;
-	public static final String root = System.getProperty("user.dir") + "\\";
+	public static String root = System.getProperty("user.dir") + "\\";
 	public static String file = null;
 	
 	public static void setTime(long time) {

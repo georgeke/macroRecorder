@@ -26,7 +26,7 @@ public class UI {
 	    		JButton record = new JButton("Record");
 	    		JButton play = new JButton("Play");
 	    		JTextField filename = new JTextField("out.txt", 60);
-	    		JFileChooser browse = new JFileChooser(System.getProperty("user.dir") + "/recordings/");
+	    		JFileChooser browse = new JFileChooser(System.getProperty("user.dir"));
 	    		
 	    		filename.setFont(new Font("Courier New", Font.PLAIN, 12));
 	    		
@@ -34,7 +34,7 @@ public class UI {
 	    		browse.setDialogTitle("Choose input file");
 	    		browse.setControlButtonsAreShown(false);
 	    		play.addActionListener(new PlayAction(browse));
-	    		record.addActionListener(new RecordAction(filename));
+	    		record.addActionListener(new RecordAction(filename, browse));
 	    		
 	    	    actions.setLayout(gridbag);
 
