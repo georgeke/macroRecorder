@@ -21,7 +21,12 @@ public class RecordAction implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {		
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-            	MainRecorder.file = file.getText();
+            	String fileStr = file.getText();
+            	
+            	// ignoring backslashes
+            	fileStr = fileStr.replace("\\", "");
+            	
+            	MainRecorder.file = fileStr;
             	System.out.println(MainRecorder.file);
             	
             	if (MainRecorder.file != null) {
