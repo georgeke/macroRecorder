@@ -23,7 +23,6 @@ public class RecordAction implements ActionListener {
             public void run() {
             	String fileStr = file.getText();
             	
-            	
             	// ignoring backslashes
             	fileStr = fileStr.replace("\\", "");
             	
