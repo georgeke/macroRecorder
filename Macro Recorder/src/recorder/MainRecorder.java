@@ -35,14 +35,25 @@ public class MainRecorder {
 		System.out.println(root);
 		
 		time = System.nanoTime();
-	    GlobalScreen.getInstance().addNativeKeyListener(new KeyRecorder(root + file));
-	    GlobalScreen.getInstance().addNativeMouseListener(new MouseRecorder(root + file));
-	    GlobalScreen.getInstance().addNativeMouseMotionListener(new MouseRecorder(root + file));
-	    GlobalScreen.getInstance().addNativeMouseWheelListener(new ScrollRecorder(root + file));
+		KeyRecorder keyListener = new KeyRecorder(root + file);
+		MouseRecorder mouseListener = new MouseRecorder(root + file);
+		MouseRecorder mouseMotionListener = new MouseRecorder(root + file);
+		ScrollRecorder mouseWheelListener = new ScrollRecorder(root + file);
+		
+	    GlobalScreen.getInstance().addNativeKeyListener(keyListener);
+	    GlobalScreen.getInstance().addNativeMouseListener(mouseListener);
+	    GlobalScreen.getInstance().addNativeMouseMotionListener(mouseMotionListener);
+	    GlobalScreen.getInstance().addNativeMouseWheelListener(mouseWheelListener);
 	    
 	    while (GlobalScreen.isNativeHookRegistered()) {
 	    	
 	    }
+	    
+	    // Need to remove the listeners that were added...
+	    GlobalScreen.getInstance().removeNativeKeyListener(keyListener);
+	    GlobalScreen.getInstance().removeNativeMouseListener(mouseListener);
+	    GlobalScreen.getInstance().removeNativeMouseMotionListener(mouseMotionListener);
+	    GlobalScreen.getInstance().removeNativeMouseWheelListener(mouseWheelListener);
 	    
 	    UI.gui.resetIcon();
 	    UI.gui.setState(Frame.NORMAL);

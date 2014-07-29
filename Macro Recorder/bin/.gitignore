@@ -1,4 +1,7 @@
-/player/
-/recorder/
 /gui/
+<<<<<<< HEAD
+/recorder/
+/player/
+=======
 /program/
+>>>>>>> master

@@ -105,7 +105,9 @@ public class MouseRecorder implements NativeMouseInputListener {
 	}
 
 	@Override
-	public void nativeMouseDragged(NativeMouseEvent e) {	
+	public void nativeMouseDragged(NativeMouseEvent e) {
+		// When mouse is pressed, nativeMouseMoved does not trigger. But this function does.
+		nativeMouseMoved(e);
 	}
 
 	@Override

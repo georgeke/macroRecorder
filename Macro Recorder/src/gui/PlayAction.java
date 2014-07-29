@@ -32,7 +32,7 @@ public class PlayAction implements ActionListener {
 	            		System.exit(1);
 	            	}
             	}
-
+        		
             	if (MainPlayer.filepath != null) {
                 	UI.gui.setState(Frame.ICONIFIED);
                 	ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\img\\playIcon.png");
