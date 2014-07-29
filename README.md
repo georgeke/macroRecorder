@@ -1,7 +1,7 @@
 Macro Recorder
 =============
 ------------------------------------------
-Latest Version: [v.1.1.1][releases]
+Latest Version: [v.1.2.1][releases]
 
 A simple and lightweight global mouse and keyboard recorder and player. The recordings log the time between actions to simulate realistic playback when playing a recording. 
 
