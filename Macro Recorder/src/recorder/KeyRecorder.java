@@ -53,6 +53,8 @@ public class KeyRecorder implements NativeKeyListener {
 	            out.newLine();
 	            out.write("Wait " + timeMs);
 	            out.newLine();
+            } else {
+            	skip = false;
             }
 	            
             out.close();        
@@ -103,6 +105,8 @@ public class KeyRecorder implements NativeKeyListener {
 	            out.write("Wait " + timeMs);
 	            out.newLine();
         	} else {
+        		// Need to reset to false so that if you record again it won't just stop after any button
+        		exit = false;
         		GlobalScreen.unregisterNativeHook();
         	}
             

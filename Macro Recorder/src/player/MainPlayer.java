@@ -67,7 +67,13 @@ public class MainPlayer {
 					player.keyRelease(keycode);
 				} else if (split[0].equals("Wait")) {
 					time = Integer.parseInt(split[1]);
-					player.delay(time);
+					// delay has a max value of 60000, so we need to split it up.
+					while(time > 60000) {
+						time -= 60000;
+						player.delay(60000);
+					}
+					// Im paranoid
+					player.delay(Math.abs(time));
 				} else if (split[0].equals("Exit")) {
 					exit = true;
 				}
