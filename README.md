@@ -23,10 +23,17 @@ Requirements
 Use
 ----
 Download latest [release][releases]. Open cmd and go to directory containing the .jar file. Type java -jar [releaseName].jar
+(OR, Download the source zip and run MainProgram.java if you want the sweet icons)
 
-For recording, type in the text field for desired output filename. Files are saved in the same directory as the .jar. Press record when ready.
+For recording, type in the text field for desired output filename. Files are saved in the directory of the programs file browser. Press record when ready.
 
 Player and recording can be interrupted at any time by pressing and releasing ESC.
+
+Known Issues
+----
+You cannot hold down more than two keys and have it function properly (e.g. Ctrl+Alt+Del won't work). This is due JNativeHook's listeners.
+
+The program will not work if opened by double-clicking the jar.
 
 [home]:https://code.google.com/p/jnativehook/
 [git]:https://github.com/kwhat/jnativehook/releases
