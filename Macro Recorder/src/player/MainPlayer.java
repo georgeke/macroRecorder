@@ -24,8 +24,9 @@ public class MainPlayer {
 			BufferedReader in = new BufferedReader(new FileReader(filepath));
 			Robot player = new Robot();
 			
-	        GlobalScreen.registerNativeHook();			
-			GlobalScreen.getInstance().addNativeKeyListener(new KeyListener());
+	        GlobalScreen.registerNativeHook();
+	        KeyListener exitListen = new KeyListener();
+			GlobalScreen.getInstance().addNativeKeyListener(exitListen);
 
 			ImageIcon img = new ImageIcon(System.getProperty("user.dir") + "\\img\\playIcon.png");
     		UI.gui.setIconImage(img.getImage());
@@ -40,8 +41,7 @@ public class MainPlayer {
 			String[] split; 
 			
 			//player.setAutoWaitForIdle(true);
-			
-			while(input != null && !exit) {
+			while(input != null && !MainPlayer.exit) {
 				split = input.split(" ");
 				System.err.println("[" + input + "]");
 				if (split[0].equals("Move")) {				
@@ -56,9 +56,7 @@ public class MainPlayer {
 					player.mouseRelease(InputEvent.getMaskForButton(button));
 				} else if (split[0].equals("Scroll")) {
 					scroll = Integer.parseInt(split[1]);
-					for (int i = 0 ; i < scroll ; i++) {
-						player.mouseWheel(1);
-					}
+					player.mouseWheel(scroll);
 				} else if (split[0].equals("KeyPress")) {
 					keycode = Integer.parseInt(split[1]);
 					player.keyPress(keycode);
@@ -75,7 +73,7 @@ public class MainPlayer {
 					// Im paranoid
 					player.delay(Math.abs(time));
 				} else if (split[0].equals("Exit")) {
-					exit = true;
+					MainPlayer.exit = true;
 				}
 				input = in.readLine();
 			}
@@ -83,8 +81,9 @@ public class MainPlayer {
 			UI.gui.resetIcon();
 			UI.gui.setState(Frame.NORMAL);
 			
+			GlobalScreen.getInstance().removeNativeKeyListener(exitListen);
 			GlobalScreen.unregisterNativeHook();
-			exit = false;			
+			MainPlayer.exit = false;			
 			in.close();
 		} catch (IOException iox) {
             System.err.println("Cannot read from " + filepath + ".");

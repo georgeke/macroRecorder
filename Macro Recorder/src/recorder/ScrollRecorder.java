@@ -17,10 +17,18 @@ public class ScrollRecorder implements NativeMouseWheelListener {
 	@Override
 	public void nativeMouseWheelMoved(NativeMouseWheelEvent e) {
         try {
+            long time = System.nanoTime();
+            long prevTime = MainRecorder.getTime();
+            MainRecorder.setTime(time);
+            time = Math.abs(time - prevTime);
+            int timeMs = (int) (time / MainRecorder.convertRate);
+        	
             BufferedWriter out = new BufferedWriter(new FileWriter(filepath, true));
             
             int notch = e.getWheelRotation();
             out.write("Scroll " + notch);
+            out.newLine();
+            out.write("Wait " + timeMs);
             out.newLine();
             out.close();
 	    }

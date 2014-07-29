@@ -9,7 +9,6 @@ import java.io.BufferedWriter;
 public class MouseRecorder implements NativeMouseInputListener {
 	
 	private String filepath;
-	private static boolean mousePressed = false;
 	
 	public MouseRecorder(String filepath){
 		this.filepath = filepath;
@@ -21,7 +20,6 @@ public class MouseRecorder implements NativeMouseInputListener {
 
 	@Override
 	public void nativeMousePressed(NativeMouseEvent e) {
-		MouseRecorder.mousePressed = true;
         try {
             long time = System.nanoTime();
             long prevTime = MainRecorder.getTime();
@@ -65,7 +63,6 @@ public class MouseRecorder implements NativeMouseInputListener {
 
 	@Override
 	public void nativeMouseReleased(NativeMouseEvent e) {
-		MouseRecorder.mousePressed = false;
         try {
             long time = System.nanoTime();
             long prevTime = MainRecorder.getTime();
@@ -110,9 +107,7 @@ public class MouseRecorder implements NativeMouseInputListener {
 	@Override
 	public void nativeMouseDragged(NativeMouseEvent e) {
 		// When mouse is pressed, nativeMouseMoved does not trigger. But this function does.
-		if(MouseRecorder.mousePressed) {
-			nativeMouseMoved(e);
-		}
+		nativeMouseMoved(e);
 	}
 
 	@Override
