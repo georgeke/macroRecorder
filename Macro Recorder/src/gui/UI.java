@@ -28,12 +28,13 @@ public class UI {
 	    		JTextField filename = new JTextField("out.txt", 60);
 	    		JFileChooser browse = new JFileChooser(System.getProperty("user.dir"));
 	    		
+	    		JTextField numberBox = new JTextField("1", 60);
 	    		filename.setFont(new Font("Courier New", Font.PLAIN, 12));
 	    		
 	    		browse.setDragEnabled(true);
 	    		browse.setDialogTitle("Choose input file");
 	    		browse.setControlButtonsAreShown(false);
-	    		play.addActionListener(new PlayAction(browse));
+	    		play.addActionListener(new PlayAction(browse, numberBox));
 	    		record.addActionListener(new RecordAction(filename, browse));
 	    		
 	    	    actions.setLayout(gridbag);
@@ -48,8 +49,10 @@ public class UI {
 	    	    c.gridy = 2;
 	    	    actions.add(browse, c);
 	    	    c.gridy = 3;
+	    	    actions.add(numberBox, c);
+	    	    c.gridy = 4;
 	    	    actions.add(play, c);
-	    	    
+	    	    gui.setSize(600, 500);
 	    	    gui.add(actions);
 	        }
 	    });	
